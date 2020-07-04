@@ -7,7 +7,7 @@ import './App.scss'
 
 const URL =
   process.env.NODE_ENV === 'production'
-    ? 'https://ghjobs.netlify.app/.netlify/functions/proxy'
+    ? 'https://ghjobs.netlify.app/.netlify/functions/proxy/'
     : ''
 
 function App() {
