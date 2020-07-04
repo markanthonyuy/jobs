@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 exports.handler = async function (event, context, callback) {
   try {
     const res = await fetch('https://jobs.github.com/positions.json')
