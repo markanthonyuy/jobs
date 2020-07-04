@@ -2,7 +2,7 @@
 
 My Version of Github Jobs 😄
 
-Visit [GH Jobs](https://https://ghjobs.netlify.app/)
+Visit [GH Jobs](https://ghjobs.netlify.app/)
 
 Built using #reactjs #material-ui deployed in #netlify
 
