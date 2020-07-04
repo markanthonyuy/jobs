@@ -6,7 +6,9 @@ import MainContent from './components/MainContent'
 import './App.scss'
 
 const URL =
-  process.env.NODE_ENV === 'production' ? 'https://jobs.github.com/' : ''
+  process.env.NODE_ENV === 'production'
+    ? 'https://ghjobs.netlify.app/.netlify/functions/proxy'
+    : ''
 
 function App() {
   const [jobs, setJobs] = useState([])
