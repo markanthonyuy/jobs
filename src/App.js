@@ -5,18 +5,19 @@ import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
 import './App.scss'
 
+const URL =
+  process.env.NODE_ENV === 'production' ? 'https://jobs.github.com/' : ''
+
 function App() {
   const [jobs, setJobs] = useState([])
   const [filter, setFilter] = useState([])
   const [locations, setLocations] = useState([])
   const [types, setTypes] = useState([])
 
-  console.log(process.env.NODE_ENV)
-
   useEffect(() => {
     ;(async function getData() {
       try {
-        const res = await fetch('positions.json')
+        const res = await fetch(`${URL}positions.json`)
         const data = await res.json()
 
         const locations = data.map((loc) => loc.location)
@@ -59,6 +60,7 @@ function App() {
           setJobs={setJobs}
           setTypes={setTypes}
           setLocations={setLocations}
+          url={URL}
         />
         <div className="flex">
           <Sidebar
