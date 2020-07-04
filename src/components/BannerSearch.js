@@ -9,7 +9,7 @@ import {
   FormControlLabel,
 } from '@material-ui/core'
 
-function BannerSearch({ searchNewJobs, setJobs, setLocations, setTypes }) {
+function BannerSearch({ url, searchNewJobs, setJobs, setLocations, setTypes }) {
   const searchField = useRef()
   const [filter, setFilter] = useState('description')
 
@@ -19,7 +19,7 @@ function BannerSearch({ searchNewJobs, setJobs, setLocations, setTypes }) {
       setLocations([])
       setTypes([])
 
-      const res = await fetch(`positions.json?${filter}=${param}`)
+      const res = await fetch(`${url}positions.json?${filter}=${param}`)
       const data = await res.json()
 
       searchNewJobs(data)
