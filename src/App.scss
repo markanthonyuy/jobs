@@ -149,6 +149,7 @@
 .title-company {
   font-size: 14px;
   color: #999;
+  white-space: nowrap;
 }
 
 .popup-avatar {
@@ -180,4 +181,8 @@
     color: palevioletred;
     text-decoration: underline;
   }
+}
+
+.no-result {
+  font-size: 36px;
 }

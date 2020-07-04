@@ -10,6 +10,7 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import Alert from '@material-ui/lab/Alert'
 
 function RenderSkeleton({ count = 10 }) {
   return [...Array(count)].map((_, i) => (
@@ -136,17 +137,17 @@ function Card({ job }) {
   )
 }
 
-function MainContent({ jobs, filter }) {
+function MainContent({ jobs, filter, loading }) {
   return (
     <aside className="content">
-      {filter.length ? (
+      {loading ? (
+        <RenderSkeleton count={20} />
+      ) : filter.length ? (
         filter.map((job, key) => <Card job={job} key={job.id} />)
       ) : jobs.length ? (
         jobs.map((job, key) => <Card job={job} key={job.id} />)
       ) : (
-        <>
-          <RenderSkeleton count={20} />
-        </>
+        <Alert severity="error">No Result</Alert>
       )}
     </aside>
   )

@@ -15,10 +15,12 @@ function App() {
   const [filter, setFilter] = useState([])
   const [locations, setLocations] = useState([])
   const [types, setTypes] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     ;(async function getData() {
       try {
+        setLoading(true)
         const res = await fetch(`${URL}positions.json`)
         const data = await res.json()
 
@@ -29,8 +31,10 @@ function App() {
         setTypes(types)
 
         setJobs(data)
+        setLoading(false)
       } catch (error) {
         console.log(error)
+        setLoading(false)
       }
     })()
   }, [])
@@ -63,6 +67,7 @@ function App() {
           setTypes={setTypes}
           setLocations={setLocations}
           url={URL}
+          setLoading={setLoading}
         />
         <div className="flex">
           <Sidebar
@@ -71,7 +76,7 @@ function App() {
             filterJobsType={filterJobsType}
             filterJobsLoc={filterJobsLoc}
           />
-          <MainContent jobs={jobs} filter={filter} />
+          <MainContent jobs={jobs} filter={filter} loading={loading} />
         </div>
 
         <div className="footer">

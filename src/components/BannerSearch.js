@@ -9,12 +9,20 @@ import {
   FormControlLabel,
 } from '@material-ui/core'
 
-function BannerSearch({ url, searchNewJobs, setJobs, setLocations, setTypes }) {
+function BannerSearch({
+  url,
+  searchNewJobs,
+  setJobs,
+  setLocations,
+  setTypes,
+  setLoading,
+}) {
   const searchField = useRef()
   const [filter, setFilter] = useState('description')
 
   const searchJobs = async (param) => {
     try {
+      setLoading(true)
       setJobs([])
       setLocations([])
       setTypes([])
@@ -23,8 +31,10 @@ function BannerSearch({ url, searchNewJobs, setJobs, setLocations, setTypes }) {
       const data = await res.json()
 
       searchNewJobs(data)
+      setLoading(false)
     } catch (error) {
       console.log(error)
+      setLoading(false)
     }
   }
 
