@@ -11,6 +11,8 @@ function App() {
   const [locations, setLocations] = useState([])
   const [types, setTypes] = useState([])
 
+  console.log(process.env.NODE_ENV)
+
   useEffect(() => {
     ;(async function getData() {
       try {
