@@ -33,16 +33,47 @@
     border-radius: 10px;
     background: #fff;
 
-    input {
-      width: 260px;
+    @media (max-width: 600px) {
+      width: 90%;
+      height: 200px;
+      display: block;
+    }
+
+    @media (max-width: 400px) {
+      height: 220px;
+    }
+
+    .MuiFormHelperText-contained {
+      @media (max-width: 400px) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    .search-text {
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+
+      input {
+        width: 260px;
+      }
     }
 
     > button {
       height: 57px;
+
+      @media (max-width: 600px) {
+        width: 100%;
+        height: auto;
+      }
     }
 
     .banner-search-filter {
       label {
+        &:last-child {
+          margin-right: 0;
+        }
         span {
           font-size: 13px;
         }
@@ -57,11 +88,19 @@
 
 .flex {
   display: flex;
+
+  @media (max-width: 1000px) {
+    display: block;
+  }
 }
 
 .sidebar {
   width: 300px;
   padding: 20px 0;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 
   h3 {
     margin: 0;
@@ -70,17 +109,55 @@
   .location {
     width: 300px;
     margin-top: 15px;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
   }
 
   .location-search {
     margin: 10px 0;
     background: #fff;
   }
+
+  .filter-loc-radio {
+    @media (max-width: 1000px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 700px) {
+      height: 200px;
+      overflow-y: auto;
+    }
+
+    label {
+      @media (max-width: 1000px) {
+        margin: 0;
+        width: 33%;
+      }
+
+      @media (max-width: 700px) {
+        width: 50%;
+      }
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .content {
   width: calc(100% - 300px);
   padding: 20px 0 20px 20px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 0;
+  }
 }
 
 .card {
@@ -93,12 +170,20 @@
   box-shadow: 0 2px 2px #ddd;
   cursor: pointer;
 
+  @media (max-width: 600px) {
+    display: block;
+  }
+
   > figure {
     margin-right: 20px;
 
     > div {
       width: 100px;
       height: 100px;
+
+      @media (max-width: 600px) {
+        margin: 0 auto;
+      }
 
       img {
         object-fit: contain;
@@ -109,10 +194,18 @@
   > .body {
     width: calc(100% - 120px);
 
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+
     p {
       margin-bottom: 0;
       color: #999999;
       font-size: 14px;
+
+      @media (max-width: 600px) {
+        text-align: center;
+      }
 
       a {
         color: #999999;
@@ -123,6 +216,12 @@
       margin: 3px 0 5px;
       line-height: 40px;
       font-size: 32px;
+
+      @media (max-width: 600px) {
+        font-size: 20px;
+        text-align: center;
+        line-height: 26px;
+      }
     }
 
     > .meta {
@@ -130,7 +229,13 @@
       justify-content: space-between;
       align-items: flex-end;
 
+      @media (max-width: 600px) {
+        align-items: center;
+      }
+
       .post-meta {
+        text-align: right;
+
         > span {
           margin: 0 5px;
           display: inline-block;

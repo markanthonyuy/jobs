@@ -63,7 +63,7 @@ function Sidebar({ locations, types, filterJobsLoc, filterJobsType }) {
           />
         </FormControl>
         {filterLoc.length ? (
-          <RadioGroup defaultValue="reset">
+          <RadioGroup defaultValue="reset" className="filter-loc-radio">
             <FormControlLabel
               control={<Radio name="location" value="reset" color="primary" />}
               color="primary"
@@ -83,7 +83,7 @@ function Sidebar({ locations, types, filterJobsLoc, filterJobsType }) {
           </RadioGroup>
         ) : (
           distincLoc.length > 1 && (
-            <RadioGroup defaultValue="reset">
+            <RadioGroup defaultValue="reset" className="filter-loc-radio">
               <FormControlLabel
                 control={
                   <Radio name="location" value="reset" color="primary" />

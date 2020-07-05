@@ -42,7 +42,7 @@ function BannerSearch({
     <div className="banner">
       <img src={BANNER} alt="Working People" />
       <div>
-        <FormControl>
+        <FormControl className="search-text">
           <TextField
             id="outlined-basic"
             label="Search"
